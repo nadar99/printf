@@ -2,26 +2,27 @@
 #include <unistd.h>
 /**
  * print_char - Print character
- * @c: character to print in ascii
+ * @list: va_list containig the char  to print
  *
  * Return: 1 on success , -1 on error.
  */
 
-int print_char(int c)
+int print_char(va_list list)
 {
-	return (_putchar(c));
+	return (_putchar(va_arg(list, int)));
 }
 
 /**
  * print_string - Print string
- * @s: string to print
+ * @list: va_list containig the string to print
  *
  * Return: length of the string on success , -1 on error.
  */
 
-int print_string(char *s)
+int print_string(va_list list)
 {
 	int i;
+	char *s = va_arg(list, char *);
 
 	if (!s)
 		return (write(1, "(null)", 6));

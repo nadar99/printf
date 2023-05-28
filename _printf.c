@@ -19,24 +19,24 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == 'c')
+			if (format[i + 1] == '%')
 			{
-				int c = va_arg(list, int);
-
-				if (c)
-					count += print_char(c);
-				i++;
+				_putchar('%');
 			}
-			else if (format[i + 1] == '%')
+			/** printf("%")**/
+			else if (format[i + 1] == '\0')
 			{
-				print_char('%');
-				i++;
+				return (-1);
 			}
-			else if (format[i + 1] == 's')
+			else if (select_print_function(format[i + 1]) != NULL)
 			{
-				count += print_string(va_arg(list, char *));
-				i++;
+				count += (select_print_function(format[i + 1]))(list);
 			}
+			else
+			{
+				count += _putchar(format[i + 1]);
+			}
+			i++;
 		}
 		else
 		{
