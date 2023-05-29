@@ -22,6 +22,7 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == '%')
 			{
 				count += _putchar('%');
+				i++;
 			}
 			/** printf("%")**/
 			else if (format[i + 1] == '\0')
@@ -31,12 +32,12 @@ int _printf(const char *format, ...)
 			else if (select_print_function(format[i + 1]) != NULL)
 			{
 				count += (select_print_function(format[i + 1]))(list);
+				i++;
 			}
 			else
 			{
-				count += _putchar(format[i + 1]);
+				count += _putchar(format[i]);
 			}
-			i++;
 		}
 		else
 		{
