@@ -22,7 +22,8 @@ int _putchar(char c);
 /** print_functions.c **/
 int print_char(va_list list);
 int print_string(va_list list);
-int print_int(va_list list);
+int print_i(va_list list);
+int print_int(int num)
 
 int (*select_print_function(char c))(va_list);
 

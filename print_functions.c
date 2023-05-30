@@ -35,16 +35,22 @@ int print_string(va_list list)
 }
 
 /**
-  * print_int - Print integer by converting to char first
+  * print_int - Print integer
  * @list: va_list containig the integer to print
  * Return: 1 on success , -1 on error.
- */
-int print_int(va_list list)
+*/
+int print_int(int num)
 {
-	int i;
-	int *n = va_arg(list, int *);
-	for (i = 0; n[i] != 0; i++)
-	_putchar(n[i]+'0');
+	va_list list;
+	va_start (list, num);
+	if (num < 0)
+	{
+		_putchar('-', stdout);
+		num = -num;
+	}
 
-	return (i);
+	if (num > 9)
+	print_int(num/10);
+
+	_putchar('0'+ (num%10), stdout);
 }
