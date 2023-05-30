@@ -41,17 +41,13 @@ int print_string(va_list list)
 */
 int print_int(va_list list)
 {
-	long int n = va_arg(list, long int);
+	int n = va_arg(list, int);
+
 	if (n < 0)
-	{
-	_putchar('-');
-	n = -n;
-	}
+		n = -n;
 
 	if (n > 9)
-		print_int(n/10);
-
-	_putchar('0'+ (n%10));
+		return (_putchar('0'+ (n%10)));
 	return (_putchar('0' + n));
 
- }
+}
