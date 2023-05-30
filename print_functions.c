@@ -39,18 +39,19 @@ int print_string(va_list list)
  * @list: va_list containig the integer to print
  * Return: 1 on success , -1 on error.
 */
-int print_int(int num)
+int print_int(va_list list)
 {
-	va_list list;
-	va_start (list, num);
-	if (num < 0)
+	long int n = va_arg(list, long int);
+	if (n < 0)
 	{
-		_putchar('-', stdout);
-		num = -num;
+	_putchar('-');
+	n = -n;
 	}
 
-	if (num > 9)
-	print_int(num/10);
+	if (n > 9)
+		print_int(n/10);
 
-	_putchar('0'+ (num%10), stdout);
-}
+	_putchar('0'+ (n%10));
+	return (_putchar('0' + n));
+
+ }
