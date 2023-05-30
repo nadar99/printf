@@ -42,7 +42,7 @@ int print_string(va_list list)
 int print_int(va_list list)
 {
 	int i;
-	char *n = va_arg(list, char *);
+	int *n = va_arg(list, int *);
 	for (i = 0; n[i] != '\0'; i++)
 	_putchar(n[i]+'0');
 
