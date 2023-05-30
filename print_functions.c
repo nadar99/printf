@@ -33,3 +33,18 @@ int print_string(va_list list)
 
 	return (i);
 }
+
+/**
+  * print_int - Print integer by converting to char first
+ * @list: va_list containig the integer to print
+ * Return: 1 on success , -1 on error.
+ */
+int print_int(va_list list)
+{
+	int i;
+	char *n = va_arg(list, char *);
+	for (i = 0; n[i] != '\0'; i++)
+	_putchar(n[i]+'0');
+
+	return (i);
+}
