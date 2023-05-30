@@ -1,5 +1,15 @@
 #include "main.h"
 #include <unistd.h>
+
+/**
+ * print_int - Print integer
+ * Return: 1 on success , -1 on error.
+ */
+int print_int(va_list list)
+{
+	return (_putchar(va_arg(list, int)));
+}
+
 /**
  * print_char - Print character
  * @list: va_list containig the char  to print

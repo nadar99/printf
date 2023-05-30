@@ -12,6 +12,7 @@ int (*select_print_function(char c))(va_list)
 	print st[] = {
 		{'c', print_char},
 		{'s', print_string},
+		{'i', print_int},
 		{'\0', NULL}
 	};
 
@@ -23,4 +24,3 @@ int (*select_print_function(char c))(va_list)
 
 	return (NULL);
 }
-
