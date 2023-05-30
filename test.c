@@ -15,4 +15,5 @@ int main(void)
 	num2 = printf("Number:[%i]\n", '9');
 	printf("num:[%d]\n", num);
 	printf("num2:[%d]\n", num2);
+	return (0);
 }
