@@ -43,13 +43,25 @@ int print_int(va_list list)
 {
 	int n = va_arg(list, int);
 
+	int iprint(int i)
+	{
+		if( i > 9 )
+		{
+			int a = i / 10;
+
+			i -= 10 * a;
+			iprint(a);
+		}
+
+		return (_putchar('0' + n));
+	}
 	if (n < 0)
+	{
 		n = -n;
+		return (_putchar('0' + n));
+	}
 	if (n == 0)
 		return (_putchar('0' + n));
 	if (n > 9)
-		n = n/10
-		return (_putchar('0' + (n%10)));
-	return (_putchar('0' + n));
-
+		iprint(n);
 }
