@@ -39,13 +39,6 @@ int print_string(va_list list)
  * @list: va_list containig the integer to print
  * Return: 1 on success , -1 on error.
 */
-int iprint(int i)
-        {
-		int a = i / 10;
-
-		i -= 10 * a;
-		iprint(a);
-        }
 int print_int(va_list list)
 {
 	int n = va_arg(list, int);
@@ -56,9 +49,15 @@ int print_int(va_list list)
 		n = -n;
 		return (_putchar('0' + n));
 	}
-	if (n == 0)
+	else if (n == 0)
 		return (_putchar('0' + n));
-	if (n > 9)
-		iprint(n);
+	else if (n > 9)
+	{
+		int a = n / 10;
+
+                n -= 10 * a;
+		return (_putchar('0' + n));
+	}
+	else
 		return (_putchar('0' + n));
 }
