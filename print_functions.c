@@ -46,7 +46,12 @@ int print_int(va_list list)
 	if (n < 0)
 		n = -n;
 
-	if (n > 9)
+	if (n = 0)
+		n = 0;
+	if (n > 0 && n < 9)
+		n = n/10;
+	if (n > 0)
+		n = n/10;
 		return (_putchar('0'+ (n%10)));
 	return (_putchar('0' + n));
 
