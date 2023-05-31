@@ -50,7 +50,7 @@ int print_int(va_list list)
 		return (_putchar('0' + n));
 	}
 	else if (n == 0)
-		return (_putchar('0' + n));
+		return (_putchar('0' + 0));
 	else if (n > 9)
 	{
 		int a = n / 10;
