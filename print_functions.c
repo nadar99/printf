@@ -45,7 +45,7 @@ int print_int(va_list list)
 
 	if (n < 0)
 		n = -n;
-	if (n = 0)
+	if (n == 0)
 		n = 0;
 	if (n > 0)
 		n = n;
